@@ -1,0 +1,11 @@
+@import './src/assets/Config/Utils';
+
+.input-text-textbox {
+    height: 30px;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    outline-style: none;
+    border: thin solid $color-black;
+    margin-bottom: 7px;
+}

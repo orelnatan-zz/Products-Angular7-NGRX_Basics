@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import './src/assets/Config/Utils';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: HeeboRegular;
+    src: url('./assets/Fonts/HeeboRegular.ttf');
+}
+
+@font-face {
+  font-family: JennaSue;
+  src: url('./assets/Fonts/JennaSue.ttf');
+}
+
+body {
+    font-family: HeeboRegular;
+
+    @media screen and (min-width: 900px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 899px) {
+      font-size: 13px;
+    }
+}
+
+dialog {
+  position: relative;
+  display: block;
+  border-style: none;
+}
+
+.global-separator {
+  display: block;
+  padding: 30px 0px;
+}
+
+.global-button {
+  cursor: pointer;
+  text-align: center;
+  outline-style: none;
+  font-size: 1em;
+  width: 100%;
+  height: 35px;
+  color: $color-white;
+  border-style: none;
+
+  &:hover {
+      box-shadow: 0 4px 10px 0 rgba($color-black, 0.2), 0 4px 20px 0 rgba($color-black, 0.19);
+  }
+}
+
+.global-button-primary {
+  background: $color-sky;
+}
+
+.global-button-secondary {
+  background: $color-mouse;
+}
+
+.global-button-disabled {
+  opacity: 0.7;
+  pointer-events: none;
+
+  &:hover {
+      cursor: default;
+  }
+}
+
+.global-overflowEllipsis {
+  white-space: nowrap; 
+  max-width: 80%; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+

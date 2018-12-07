@@ -1,0 +1,5 @@
+
+// In order to use movies.json file:
+
+// - environment.ts >>> add file path: "apis: { booksApi: "assets/books.json" }"
+// - service.ts >>> import env: "import { environment } from ..." and call file: "this.http.get(environment.apis.booksApi).map(..."
