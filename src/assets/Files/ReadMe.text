@@ -1,5 +1,52 @@
 
-// In order to use movies.json file:
+In order to use movies.json file:
 
-// - environment.ts >>> add file path: "apis: { booksApi: "assets/books.json" }"
-// - service.ts >>> import env: "import { environment } from ..." and call file: "this.http.get(environment.apis.booksApi).map(..."
+ - environment.ts >>> add file path: "apis: { booksApi: "assets/books.json" }"
+ - service.ts >>> import env: "import { environment } from ..." and call file: "this.http.get(environment.apis.booksApi).map(..."
+
+In order to generate json file:
+
+- use: https://www.json-generator.com/
+- exmple:
+
+[
+  '{{repeat(2,2)}}',
+  {
+    id: '{{integer(100, 999)}}',
+    name: '{{surname()}}',
+    price: "{{integer([100], [900])}}",
+    createdAt: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
+    image: "https://picsum.photos/200/300/?image=" + "{{index([5])}}",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...."
+  }
+]
+
+How to deal with dates?:
+
+// get any date in timestamp(string).
+// new Date() = current date!, 
+// also can be: new Date(03-05-2008) - or - new Date(03/05/2008),
+// also can be: new Date('Wed Dec 05 2008 00:00:00 GMT+0200 (Israel Standard Time)'); //timestamp(string),
+// also can be: new Date(142463400000), //timestamp(unix).
+
+let anyDate = new Date();
+console.log('anyDate: ', anyDate);
+
+// convert it to timestamp(unix).
+let inUnix = anyDate.getTime();
+
+console.log('inUnix: ', inUnix);
+// convert it back to timestamp(string).
+
+let timestampString = moment(inUnix).toDate();
+console.log('timestampString: ', timestampString);
+
+// from any date to timestamp(unix).
+console.log('from any date to timestamp(unix): ', new Date("2016-09-12").getTime());
+
+// from timestamp(unix) to string. 
+console.log('from timestamp(unix) to string: ', moment(1473638400000).format("MM/DD/YYYY"));
+
+// from timestamp(string) to any format(string)
+let anyStringShape = moment(timestampString).format("MM -> DD -> YYYY");
+console.log('anyStringShape: ', anyStringShape);
