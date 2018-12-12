@@ -1,0 +1,12 @@
+
+
+<div class="block-container">
+    <div class="productslist-product" *ngFor="let product of products">
+        <product-item
+            [product]="product"
+            [selected]="selected"
+            (onClick)="selected=$event; onSelect.emit($event)"
+            (onDelete)="onDelete.emit($event)">
+        </product-item>
+    </div>
+</div>

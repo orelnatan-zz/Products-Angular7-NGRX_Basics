@@ -1,0 +1,9 @@
+@import './src/assets/Config/Utils';
+
+.productslist-product {
+    margin: 10px 0px;
+
+    &:first-child {
+        margin: 0px 0px 10px 0px;
+    }
+}
