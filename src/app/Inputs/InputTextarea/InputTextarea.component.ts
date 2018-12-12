@@ -1,16 +1,18 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'input-text',
-  templateUrl: './InputText.component.html',
-  styleUrls: [ './InputText.component.scss', '../inputs.styles.scss'],
+  selector: 'input-textarea',
+  templateUrl: './InputTextarea.component.html',
+  styleUrls: [ './InputTextarea.component.scss', '../inputs.styles.scss'],
 })
 
-export class InputText {
+export class InputTextarea {
     @Input() title: string;
     @Input() validation: string;
     @Input() placeholder: string;
     @Input() value: string;
+    @Input() rows: number;
+    @Input() cols: number;
     @Input() submitted: boolean;
     @Input() invalid: boolean;
 

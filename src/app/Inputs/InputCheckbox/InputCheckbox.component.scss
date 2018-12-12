@@ -52,7 +52,7 @@
   .cbx:hover span:first-child {
     border-color: $color-grass;
   }
-  
+
   .inp-cbx:checked + .cbx span:first-child {
     background: $color-grass;
     border-color: $color-grass;
@@ -67,14 +67,17 @@
     transition: all 0.6s ease;
   }
 
-  .checkbox-notification {
+  .inputcheckbox-notification {
     position: absolute;
     top: 2px;
   }
-  
+
+  .inputcheckbox-validation {
+    left: 28px;
+  }
+
   @keyframes wave {
     50% {
       transform: scale(0.9);
     }
   }
-  

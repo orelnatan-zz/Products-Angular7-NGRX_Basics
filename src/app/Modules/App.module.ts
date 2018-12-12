@@ -20,6 +20,8 @@ import { InputSelect } from '../Inputs/InputSelect';
 import { InputDate } from '../Inputs/InputDate';
 import { InputCheckbox } from '../Inputs/InputCheckbox';
 import { InputRadioButton } from '../Inputs/InputRadioButton';
+import { InputTextarea } from '../Inputs/InputTextarea';
+import { InputNumber } from '../Inputs/InputNumber';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { InputRadioButton } from '../Inputs/InputRadioButton';
     InputDate,
     InputCheckbox,
     InputRadioButton,
-
+    InputTextarea,
+    InputNumber,
   ],
 
   imports: [

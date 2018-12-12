@@ -13,8 +13,6 @@ export class InputCheckbox {
     @Input() checked: boolean;
     @Input() submitted: boolean;
     @Input() invalid: boolean;
-    @Input() showTitle: boolean = true;
-    @Input() showValidation: boolean = true;
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
 

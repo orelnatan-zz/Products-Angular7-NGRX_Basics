@@ -15,8 +15,6 @@ export class InputDate implements OnInit {
   @Input() validation: string;
   @Input() submitted: boolean;
   @Input() invalid: boolean;
-  @Input() showTitle: boolean = true;
-  @Input() showValidation: boolean = true;
 
   @Output() onChange: EventEmitter <any> = new EventEmitter();
 

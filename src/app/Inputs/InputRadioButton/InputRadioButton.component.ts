@@ -12,7 +12,6 @@ export class InputRadioButton {
     @Input() name: string;
     @Input() value: object;
     @Input() checked: boolean;
-    @Input() showTitle: boolean = true;
 
     @Output() onChange = new EventEmitter();
 

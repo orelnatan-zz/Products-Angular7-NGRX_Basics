@@ -20,8 +20,6 @@ export class InputSelect implements OnInit, AfterViewInit {
     @Input() validation: string;
     @Input() submitted: boolean;
     @Input() invalid: boolean;
-    @Input() showTitle: boolean = true;
-    @Input() showValidation: boolean = true;
 
     @Output() onChange: EventEmitter <any> = new EventEmitter();
 
@@ -46,7 +44,7 @@ export class InputSelect implements OnInit, AfterViewInit {
       let child: HTMLElement = document.getElementById(id);
       let parent: HTMLElement = this.inputReference.nativeElement;
 
-      remoteSelection(child, parent); 
+      remoteSelection(child, parent);
     }
-    
+
 }
