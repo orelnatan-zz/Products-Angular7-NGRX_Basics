@@ -20,11 +20,11 @@
 body {
     font-family: HeeboRegular;
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $breakpoint-desktop) {
       font-size: 16px;
     }
 
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: $breakpoint-mobile) {
       font-size: 13px;
     }
 }
@@ -73,10 +73,10 @@ dialog {
 }
 
 .global-overflowEllipsis {
-  white-space: nowrap; 
-  max-width: 80%; 
+  white-space: nowrap;
+  max-width: 80%;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 

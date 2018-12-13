@@ -35,7 +35,7 @@
     cursor: pointer;
     color: $color-error;
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $breakpoint-desktop) {
       margin: 20px;
       font-size: 2em;
 
@@ -44,11 +44,11 @@
       }
     }
 
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: $breakpoint-mobile) {
       margin: 10px;
       font-size: 1em;
     }
-  } 
+  }
 }
 
 .modal-bodyfallDown {

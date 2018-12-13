@@ -1,0 +1,19 @@
+
+// Breakpoints //
+$breakpoint-desktop: 900px;
+$breakpoint-mobile: 899px;
+
+// Grid Shared //
+$root-width: 100%;
+$page-width: 100%;
+$body-margin: 0 auto;
+
+// Grid Desktop //
+$root_desktop-min-width: 1224px;
+$body_desktop-width: 1024px;
+$modal_desktop-width: 500px;
+
+// Grid Mobile //
+$root_mobile-min-width: auto;
+$body_mobile-width: 100%;
+$modal_mobile-min-width: 290px;

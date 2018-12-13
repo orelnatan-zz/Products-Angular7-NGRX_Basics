@@ -1,35 +1,36 @@
+@import './Definitions';
 
 %root {
     display: block;
-    width: 100%;
+    width: $root-width;
 
-    @media screen and (min-width: 900px) {
-        min-width: 1224px;
+    @media screen and (min-width: $breakpoint-desktop) {
+        min-width: $root_desktop-min-width;
     }
 
-    @media screen and (max-width: 899px) {
-        min-width: auto;
+    @media screen and (max-width: $breakpoint-mobile) {
+        min-width: $root_mobile-min-width;
     }
 }
 
 %page {
     display: block;
-    width: 100%;
-    
-    @media screen and (min-width: 900px) {
+    width: $page-width;
+
+    @media screen and (min-width: $breakpoint-desktop) {
         padding: 40px 0px;
     }
 
     %body {
         display: block;
-        margin: 0 auto;
+        margin: $body-margin;
 
-        @media screen and (min-width: 900px) {
-            width: 1024px;
+        @media screen and (min-width: $breakpoint-desktop) {
+            width: $body_desktop-width;
         }
-    
-        @media screen and (max-width: 899px) {
-            width: 100%;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: $body_mobile-width;
         }
     }
 }
@@ -38,12 +39,11 @@
     position: relative;
     display: block;
 
-    @media screen and (min-width: 900px) {
-        width: 500px;
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: $modal_desktop-width;
     }
 
-    @media screen and (max-width: 899px) {
-        max-width: 290px;
-        min-width: 290px;
-    } 
+    @media screen and (max-width: $breakpoint-mobile) {
+        min-width: $modal_mobile-min-width;
+    }
 }

@@ -10,6 +10,8 @@ import { Service } from '../../Services/Service.service';
 
 export class Home {
 
+  show;
+
   constructor(private service: Service){
       this.service.getSomting().subscribe((resp) => {
         console.log(resp)

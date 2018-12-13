@@ -1,7 +1,8 @@
 
+<success *ngIf="show" (onClose)="show=false"> </success>
 
 <div class="page">
-    <div class="body">
+    <div class="body" (click)="show=true">
        Hooommmmeeee !!
     </div>
 </div>

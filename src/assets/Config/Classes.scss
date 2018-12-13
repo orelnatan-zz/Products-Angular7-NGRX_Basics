@@ -181,13 +181,13 @@
 ////////////////////////////////////////// Querys ////////////////////////////////////////
 
 .show-for-desktop {
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $breakpoint-desktop) {
         display: none;
     }
 }
 
 .show-for-mobile {
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: $breakpoint-mobile) {
         display: none;
     }
 }
