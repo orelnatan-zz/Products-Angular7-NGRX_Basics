@@ -4,6 +4,8 @@ In order to use movies.json file:
  - environment.ts >>> add file path: "apis: { booksApi: "assets/books.json" }"
  - service.ts >>> import env: "import { environment } from ..." and call file: "this.http.get(environment.apis.booksApi).map(..."
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 In order to generate json file:
 
 - use: https://www.json-generator.com/
@@ -21,7 +23,10 @@ In order to generate json file:
   }
 ]
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 How to deal with dates?:
+import * as moment from 'moment';
 
 // get any date in timestamp(string).
 // new Date() = current date!, 
@@ -50,3 +55,30 @@ console.log('from timestamp(unix) to string: ', moment(1473638400000).format("MM
 // from timestamp(string) to any format(string)
 let anyStringShape = moment(timestampString).format("MM -> DD -> YYYY");
 console.log('anyStringShape: ', anyStringShape);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Need lodash?
+
+import * as _ from 'lodash'; // npm install --save lodash
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Validations
+
+<!--
+==>> Original checkbox will work properly with validation. use like follow...
+<input type="checkbox" name="tc" [(ngModel)]="details.terms" #tc="ngModel" required>
+<div *ngIf="tc.invalid && form.submitted"> <span>Error</span> </div>
+ -->
+
+<!--
+    onkeypress='return(event.charCode > 12 && event.charCode < 12)'  ==>> Prevent any key!
+    onkeypress="return(event.charCode >= 48 && event.charCode <= 57)" ==>> Allow numbers only!
+    pattern="\d{9,10}" ==>> Validate numbers only(Range 9 to 10 (see also ==>> minlength="9" maxlength="10")).
+    [disabled]="!form.valid" ==>> Disabled button using the form system.
+    [ngClass]="{'global-button-disabled': !form.valid}" ==>> Add class using the form system.
+ -->
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

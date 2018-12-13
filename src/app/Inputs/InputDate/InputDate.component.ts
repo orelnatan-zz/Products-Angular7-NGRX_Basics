@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import * as moment from 'moment';
-
+/// **** Required Format =>> 'YYYY-MM-DD' **** ///
 @Component({
   selector: 'input-date',
   templateUrl: './InputDate.component.html',
@@ -31,3 +31,6 @@ export class InputDate implements OnInit {
   }
 
 }
+
+
+// v

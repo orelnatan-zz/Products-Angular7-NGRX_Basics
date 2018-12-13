@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Service } from '../../Services/Service.service';
-import * as _ from 'lodash'; // npm install --save lodash
 
 @Component({
   selector: 'home',
@@ -13,7 +12,7 @@ export class Home {
 
   constructor(private service: Service){
       this.service.getSomting().subscribe((resp) => {
-        console.log(resp);
+
       })
   }
 
