@@ -1,33 +1,6 @@
 
-<success *ngIf="show" (onClose)="show=false"> </success>
-
 <div class="page">
     <div class="body" >
-
-      <form #form="ngForm" (ngSubmit)="form.valid && handleSubmit(initialValues)" novalidate>
-          <div class="block-contanier third">
-              <input-text
-                  [title]="'your name?'"
-                  [value]="initialValues.fullName"
-                  [validation]="'Invalide name!,&ensp;Min length must be 2 characters.'"
-                  [placeholder]="'Insert full name'"
-                  [submitted]="form.submitted"
-                  [invalid]="fullname.invalid"
-                  [ngModel]="initialValues.fullName"
-                  (onChange)="initialValues['fullName']=$event"
-                  name="fullname"
-                  #fullname="ngModel"
-                  ngDefaultControl
-                  minlength="2"
-                  required >
-              </input-text>
-          </div>
-
-          <span class="global-separator"> </span>
-          <div class="block-contanier third">
-              <button>submit</button>
-          </div>
-
-      </form>
+        hooomeeeee
     </div>
 </div>
