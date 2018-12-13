@@ -3,6 +3,10 @@
 $breakpoint-desktop: 900px;
 $breakpoint-mobile: 899px;
 
+// In order to disable mobile mode use:
+// $breakpoint-desktop: 0px;
+// $breakpoint-mobile: 0px;
+
 // Grid Shared //
 $root-width: 100%;
 $page-width: 100%;
