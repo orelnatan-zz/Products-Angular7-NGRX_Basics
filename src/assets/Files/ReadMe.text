@@ -1,10 +1,10 @@
-
+//////////////////////////////////////////////////////////////////////////////////////////////
 In order to use movies.json file:
 
  - environment.ts >>> add file path: "apis: { booksApi: "assets/books.json" }"
  - service.ts >>> import env: "import { environment } from ..." and call file: "this.http.get(environment.apis.booksApi).map(..."
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 In order to generate json file:
 
@@ -23,13 +23,12 @@ In order to generate json file:
   }
 ]
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 How to deal with dates?:
-import * as moment from 'moment';
 
 // get any date in timestamp(string).
-// new Date() = current date!, 
+// new Date() = current date!,
 // also can be: new Date(03-05-2008) - or - new Date(03/05/2008),
 // also can be: new Date('Wed Dec 05 2008 00:00:00 GMT+0200 (Israel Standard Time)'); //timestamp(string),
 // also can be: new Date(142463400000), //timestamp(unix).
@@ -49,36 +48,42 @@ console.log('timestampString: ', timestampString);
 // from any date to timestamp(unix).
 console.log('from any date to timestamp(unix): ', new Date("2016-09-12").getTime());
 
-// from timestamp(unix) to string. 
+// from timestamp(unix) to string.
 console.log('from timestamp(unix) to string: ', moment(1473638400000).format("MM/DD/YYYY"));
 
 // from timestamp(string) to any format(string)
 let anyStringShape = moment(timestampString).format("MM -> DD -> YYYY");
 console.log('anyStringShape: ', anyStringShape);
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 
-Need lodash?
+nested routing example: (https://github.com/orelnatan/Cinema-Angular6/blob/state_management/src/app/Modules/Routing.module.ts)
 
-import * as _ from 'lodash'; // npm install --save lodash
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { Cinema } from '../Pages/Cinema';
+import { MovieSummary } from '../Pages/MovieSummary';
+import { Home } from '../Pages/Home';
+
+const routes: Routes = [                                                    // empty = (empty from component's point of view!)
+    { path: '', redirectTo: 'Cinema', pathMatch: 'full' },                  // if path = empty(http://localhost:5000), so redirectTo http://localhost:5000/Cinema.
+    { path: 'Cinema', component: Cinema,
+      children: [
+        { path: '', redirectTo: 'Home', pathMatch: 'full' },                // if path = empty(http://localhost:5000/Cinema), so redirectTo http://localhost:5000/Cinema/Home.
+        { path: 'Home', component: Home },
+        { path: 'MovieSummary', component: MovieSummary },
+      ]
+    },
+
+  //  { path: '**', component: PageNotFoundComponent }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+export class RoutingModule {
 
-Validations
-
-<!--
-==>> Original checkbox will work properly with validation. use like follow...
-<input type="checkbox" name="tc" [(ngModel)]="details.terms" #tc="ngModel" required>
-<div *ngIf="tc.invalid && form.submitted"> <span>Error</span> </div>
- -->
-
-<!--
-    onkeypress='return(event.charCode > 12 && event.charCode < 12)'  ==>> Prevent any key!
-    onkeypress="return(event.charCode >= 48 && event.charCode <= 57)" ==>> Allow numbers only!
-    pattern="\d{9,10}" ==>> Validate numbers only(Range 9 to 10 (see also ==>> minlength="9" maxlength="10")).
-    [disabled]="!form.valid" ==>> Disabled button using the form system.
-    [ngClass]="{'global-button-disabled': !form.valid}" ==>> Add class using the form system.
- -->
-
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
