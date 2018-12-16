@@ -87,3 +87,161 @@ const routes: Routes = [                                                    // e
 export class RoutingModule {
 
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+cant see your brunch?
+
+https://stackoverflow.com/questions/35694731/why-cant-i-see-any-branch-in-git
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+basic git orders:
+
+ANGULAR2 + TYPESCRIPT ON EXPRESS NODE.JS - Heroku platform + Github repo
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ Create new cloning skeleton on github:
+
+ - go to github.com and click "create project". Follow instructions...
+
+ - go to the skeleton folder on terminal, and execute 'git init'
+
+ - execute 'git remote add origin <your project key>'
+
+ - execute 'git add .'  (add <space> .)
+
+ - execute 'git commit -am '<some comment>''
+
+ - execute 'git push origin master'
+
+ * name: orelnatan
+ * pass: orel1991
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ Create new project on github:
+
+ - go to github.com and click "create project". Follow instructions...
+
+ - go to "address D:\Documents\Projects\Angular_2>" on the terminal
+
+ - execute 'git clone https://github.com/orelnatan/newSkeleton.git <folder name>'
+
+ - execute 'cd <folder name>'
+
+ - execute 'npm install'
+
+ - execute 'git remote set-url origin <your project key>'   {"link example: https://github.com/orelnatan/herokuTestProj.git"}
+
+ - execute 'git push -u origin master'
+
+
+ Save new changes on github:
+
+ - save the changes on your machine
+
+ - execute git status
+
+ - execute 'git add .'  (add <space> .)
+
+ - execute 'git commit -am '<some comment>''
+
+ - execute 'git push origin master'
+
+ * name: orelnatan
+ * pass: orel1991
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ Run the app locally:
+
+ - save changes
+
+ - execute 'ng serve'  (and go to Port 4200)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ run the app via heroku:
+
+ create the app on heroku (on the first time only!):
+
+ - login to heroku on terminal using 'heroku login'
+
+ - create your app using 'heroku create <app_name>'
+
+ - add mongo db as add-on (using heroku dashboard)
+
+ - execute 'git push heroku master'
+
+
+ run the app on heroku:
+
+ - execute 'heroku open'
+
+
+ save changes on heroku:
+
+ - save the changes on your machine
+
+ - execute 'git add .'  (add <space> .)
+
+ - execute 'git commit -am '<some comment>''
+
+ - execute 'git push heroku master'
+
+ - refresh the browser page
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+animals key: https://github.com/orelnatan/React-Animals.git
+
+zer4u key: https://github.com/orelnatan/zer4u-secondary.git
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+https://wiki-pic.herokuapp.com/
+
+https://tuber-web.herokuapp.com/
+
+http://orel-portfolio-4.herokuapp.com/
+
+
+orels git & heroku
+
+natenorel@gmail.com
+orel1991
+
+
+Eliran Heroku's:
+
+eliran.natan.87@gmail.com
+w754eliran
+
+
+
+
+
+
+
+
