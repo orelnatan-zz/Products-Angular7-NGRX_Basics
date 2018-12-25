@@ -1,3 +1,6 @@
+// Ngrx Npms:
+// * npm install @ngrx/store --save.
+import { StoreModule } from '@ngrx/store';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,6 +8,8 @@ import { HttpModule, JsonpModule, } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './Routing.module';
 import { MomentModule } from 'angular2-moment'; // npm i angular2-moment // https://www.npmjs.com/package/angular2-moment
+
+import { reducers } from '../Store/Reducers';
 
 import { AppRoot } from '../Core/AppRoot';
 import { Modal } from '../Core/Modal';
@@ -51,6 +56,10 @@ import { InputNumber } from '../Inputs/InputNumber';
     FormsModule,
     RoutingModule,
     MomentModule,
+    StoreModule.forRoot({
+      products: reducers.products,
+
+    })
 
   ],
 

@@ -1,21 +1,34 @@
-import { Component } from '@angular/core';
-import { Service } from '../../Services/Service.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { Product } from '../../Models/Product.model';
+import { AppState } from '../../Models/AppState.model';
+import * as productsSelector from '../../Store/Selectors/Products.selector';
 
 @Component({
   selector: 'home',
   templateUrl: './Home.page.html',
   styleUrls: ['./Home.page.scss'],
-  providers: [ Service, ]
 })
 
-export class Home {
+export class Home implements OnInit {
 
-  constructor(private service: Service){
-      this.service.getSomting().subscribe((resp) => {
+  products$: Observable<Product[]>;
+  productsList: Array<Product>;
 
-      })
+  constructor(private store: Store<AppState>){
+    this.products$ = this.store.select(productsSelector.getProducts);
   }
 
+
+  ngOnInit() {
+
+    this.products$.subscribe((result: Array<Product>) => {
+      this.productsList = result;
+    })
+
+    console.log(this.productsList);
+  }
 
 }
 
