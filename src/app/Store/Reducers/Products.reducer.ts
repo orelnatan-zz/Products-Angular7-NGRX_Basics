@@ -101,9 +101,8 @@ export function productReducer(state = initialState, action: ProductsActions.Act
       return newState;
 
     case ProductsActions.UPDATE_PRODUCT:
-    console.log(action.payload);
       let currentProduct = newState.find((product: Product) => product.id == action.payload.id);
-      console.log(currentProduct);
+
       Object.keys(currentProduct).forEach((key) => {
           currentProduct[key] = action.payload[key];
       });
