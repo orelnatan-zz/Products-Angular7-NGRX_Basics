@@ -14,5 +14,5 @@ export class ProductItem {
 
     @Output() onClick: EventEmitter<number> = new EventEmitter();
     @Output() onDelete: EventEmitter<number> = new EventEmitter();
-
+    @Output() onEdit: EventEmitter<Product>  = new EventEmitter();
 }

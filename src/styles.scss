@@ -46,9 +46,11 @@ dialog {
   outline-style: none;
   font-size: 1em;
   width: 100%;
+  min-width: 100px;
   height: 35px;
   color: $color-white;
   border-style: none;
+  margin: 2px 0px;
 
   &:hover {
       box-shadow: 0 4px 10px 0 rgba($color-black, 0.2), 0 4px 20px 0 rgba($color-black, 0.19);

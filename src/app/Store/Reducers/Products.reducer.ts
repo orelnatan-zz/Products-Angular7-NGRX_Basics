@@ -90,14 +90,23 @@ export function productReducer(state = initialState, action: ProductsActions.Act
 
   switch(action.type) {
     case ProductsActions.ADD_PRODUCT:
-      newState.push(action.payload);
+      newState.unshift(action.payload);
 
       return newState;
 
     case ProductsActions.REMOVE_PRODUCT:
-      let idIndex = newState.findIndex((product: Product) => product.id == action.payload);
-      newState.splice(idIndex, 1);
+      let deletedProductIndex = newState.findIndex((product: Product) => product.id == action.payload);
+      newState.splice(deletedProductIndex, 1);
 
+      return newState;
+
+    case ProductsActions.UPDATE_PRODUCT:
+    console.log(action.payload);
+      let currentProduct = newState.find((product: Product) => product.id == action.payload.id);
+      console.log(currentProduct);
+      Object.keys(currentProduct).forEach((key) => {
+          currentProduct[key] = action.payload[key];
+      });
       return newState;
 
     default:
@@ -105,6 +114,5 @@ export function productReducer(state = initialState, action: ProductsActions.Act
   }
 
 }
-
 
 export const getProducts = (state: Array<Product>) => state;

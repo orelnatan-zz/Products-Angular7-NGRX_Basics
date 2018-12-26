@@ -4,6 +4,7 @@ import { Product } from '../../Models/Product.model';
 
 export const ADD_PRODUCT = '[PRODUCT] Add';
 export const REMOVE_PRODUCT = '[PRODUCT] Remove';
+export const UPDATE_PRODUCT = '[PRODUCT] Update';
 
 export class AddProduct implements Action {
   readonly type = ADD_PRODUCT;
@@ -17,4 +18,10 @@ export class RemoveProduct implements Action {
   constructor(public payload: number) {}
 }
 
-export type Actions = AddProduct | RemoveProduct;
+export class UpdateProduct implements Action {
+  readonly type = UPDATE_PRODUCT
+
+  constructor(public payload: Product) {}
+}
+
+export type Actions = AddProduct | RemoveProduct | UpdateProduct;

@@ -1,9 +1,18 @@
 @import './src/assets/Config/Utils';
 
+.home-add-product {
+  position: absolute;
+  color: $color-sky;
+  cursor: pointer;
+  margin: 15px;
+}
+
 .page {
     @extend %page;
 
     .body {
         @extend %body;
     }
+
+
 }

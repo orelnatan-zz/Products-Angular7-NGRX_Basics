@@ -11,6 +11,7 @@ export class ProductsList {
     @Input() products: Array<Product>;
     @Output() onSelect: EventEmitter<number> = new EventEmitter();
     @Output() onDelete: EventEmitter<number> = new EventEmitter();
+    @Output() onEdit: EventEmitter<number> = new EventEmitter();
 
     selected: number;
 }

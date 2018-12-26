@@ -1,6 +1,12 @@
 
+<span class="home-add-product icon icon-plus" (click)="generateProduct()"></span>
+
 <div class="page">
     <div class="body" >
-            hhoomeeeeee!!
+            <products-list
+                [products]="productsList"
+                (onDelete)="this.removeProduct($event)"
+                (onEdit)="this.changeProduct($event)">
+            </products-list>
     </div>
 </div>

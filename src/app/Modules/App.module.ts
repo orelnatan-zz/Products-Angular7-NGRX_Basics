@@ -16,6 +16,8 @@ import { Modal } from '../Core/Modal';
 import { Notification } from '../Core/Notification';
 import { Home } from '../Pages/Home';
 import { Spinner } from '../Common/Spinner';
+import { ProductsList } from '../Common/ProductsList';
+import { ProductItem } from '../Common/ProductsList/SubComponents/ProductItem';
 import { Loader } from '../Modals/Loader';
 import { Dialog } from '../Modals/Dialog';
 import { Success } from '../Modals/Success';
@@ -35,6 +37,8 @@ import { InputNumber } from '../Inputs/InputNumber';
     Notification,
     Home,
     Spinner,
+    ProductsList,
+    ProductItem,
     Loader,
     Dialog,
     Success,
