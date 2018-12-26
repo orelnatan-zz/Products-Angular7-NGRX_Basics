@@ -26,7 +26,7 @@ export class Home implements OnInit {
           this.productsList = result;
       })
   }
-
+  // Ngrx Actions //
   removeProduct(id: number): void {
       this.store.dispatch(new productsActions.RemoveProduct(id));
   }
@@ -39,6 +39,22 @@ export class Home implements OnInit {
       this.store.dispatch(new productsActions.UpdateProduct(updates));
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ////////////////////////////////////////////////
   changeProduct(product: Product): void {
       let currentProduct = { ...product };
       currentProduct.name = 'product changed!',
