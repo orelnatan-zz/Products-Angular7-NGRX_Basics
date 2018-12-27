@@ -12,7 +12,7 @@ import { Action } from '@ngrx/store/src';
 
 
 
-@Injectable()
+ @Injectable()
 export class ProductsEffects {
 
   constructor(private actions$: Actions,
@@ -21,7 +21,17 @@ export class ProductsEffects {
   }
 
   @Effect()
-  loadProducts$: Observable<Action> = this.actions$.ofType(productsActions.LOAD_PRODUCTS).pipe(
-
-  );
+  loadProducts$: Observable<Action> = this.actions$.pipe(
+    ofType<productsActions.LoadProducts>(
+        productsActions.LOAD_PRODUCTS
+    ),
+    // ...
+  )
 }
+
+
+// https://itnext.io/ngrx-best-practices-for-enterprise-angular-applications-6f00bcdf36d7
+
+// https://github.com/wesleygrimes/angular-ngrx-chuck-norris
+
+// https://stackblitz.com/edit/angular-ngrx-chuck-norris?embed=1&file=src/app/containers/jokes/jokes.component.ts
