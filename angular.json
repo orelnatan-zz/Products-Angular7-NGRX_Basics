@@ -123,5 +123,9 @@
       }
     }
   },
-  "defaultProject": "Books"
+  "defaultProject": "Books",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
+
 }

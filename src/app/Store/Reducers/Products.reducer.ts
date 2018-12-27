@@ -85,31 +85,33 @@ const initialState: Array<Product> = [
   }
 ]
 
-export function productReducer(state = initialState, action: ProductsActions.Actions): Array<Product>{
-  let newState = state;
-
+export function productReducer(state = initialState, action: ProductsActions.Actions): Array<Product> {
   switch(action.type) {
-    case ProductsActions.ADD_PRODUCT:
-      newState.unshift(action.payload);
+    case ProductsActions.LOAD_PRODUCTS:
 
-      return newState;
+    return state;
+
+    case ProductsActions.ADD_PRODUCT:
+      state.unshift(action.payload);
+
+      return state;
 
     case ProductsActions.REMOVE_PRODUCT:
-      let deletedProductIndex = newState.findIndex((product: Product) => product.id == action.payload);
-      newState.splice(deletedProductIndex, 1);
+      let deletedProductIndex = state.findIndex((product: Product) => product.id == action.payload);
+      state.splice(deletedProductIndex, 1);
 
-      return newState;
+      return state;
 
     case ProductsActions.UPDATE_PRODUCT:
-      let currentProduct = newState.find((product: Product) => product.id == action.payload.id);
+      let currentProduct = state.find((product: Product) => product.id == action.payload.id);
 
       Object.keys(currentProduct).forEach((key) => {
           currentProduct[key] = action.payload[key];
       });
-      return newState;
+      return state;
 
     default:
-      return newState;
+      return state;
   }
 
 }

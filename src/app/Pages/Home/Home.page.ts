@@ -12,20 +12,15 @@ import * as productsActions from '../../Store/Actions/Products.action';
   styleUrls: ['./Home.page.scss'],
 })
 
-export class Home implements OnInit {
-
-  products$: Observable<Product[]>;
+export class Home {
   productsList: Array<Product>;
 
   constructor(private store: Store<AppState>){
-      this.products$ = this.store.select(productsSelector.getProducts);
+      this.store.select(productsSelector.getProducts).subscribe((products: Array<Product>) => {
+          this.productsList = products;
+      });
   }
 
-  ngOnInit() {
-      this.products$.subscribe((result: Array<Product>) => {
-          this.productsList = result;
-      })
-  }
   // Ngrx Actions //
   removeProduct(id: number): void {
       this.store.dispatch(new productsActions.RemoveProduct(id));

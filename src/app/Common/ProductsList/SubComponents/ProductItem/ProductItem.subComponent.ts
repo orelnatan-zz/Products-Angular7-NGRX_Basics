@@ -5,7 +5,6 @@ import { Product } from '../../../../Models/Product.model';
   selector: 'product-item',
   templateUrl: './ProductItem.subComponent.html',
   styleUrls: ['./ProductItem.subComponent.scss'],
-
 })
 
 export class ProductItem {

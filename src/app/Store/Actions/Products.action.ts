@@ -2,9 +2,16 @@ import { Injectable } from '@angular/core'
 import { Action } from '@ngrx/store'
 import { Product } from '../../Models/Product.model';
 
+export const LOAD_PRODUCTS = '[PRODUCTS] Load'
 export const ADD_PRODUCT = '[PRODUCT] Add';
 export const REMOVE_PRODUCT = '[PRODUCT] Remove';
 export const UPDATE_PRODUCT = '[PRODUCT] Update';
+
+export class LoadProducts implements Action {
+  readonly type = LOAD_PRODUCTS;
+
+  constructor(){}
+}
 
 export class AddProduct implements Action {
   readonly type = ADD_PRODUCT;
@@ -24,4 +31,4 @@ export class UpdateProduct implements Action {
   constructor(public payload: Product) {}
 }
 
-export type Actions = AddProduct | RemoveProduct | UpdateProduct;
+export type Actions = LoadProducts | AddProduct | RemoveProduct | UpdateProduct;
