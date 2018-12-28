@@ -41,7 +41,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
                 products: [],
                 isPending: false,
                 status: {
-                    isAjaxFailed: false,
+                    isAjaxFailed: true,
                     notification: action.payload.errorAlert,
                 },
             }
