@@ -162,7 +162,7 @@ ANGULAR2 + TYPESCRIPT ON EXPRESS NODE.JS - Heroku platform + Github repo
 
  - save changes
 
- - execute 'ng serve'  (and go to Port 4200)
+ - execute 'ng serve'  (and go to Port 5000)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

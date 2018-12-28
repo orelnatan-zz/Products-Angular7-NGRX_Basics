@@ -6,16 +6,15 @@ import { Product } from '../Models/Product.model';
 
 @Injectable()
 export class Products {
-
     constructor(private http: Http){}
 
-    getProducts(): Observable<Product[] | Error> {
+    getProducts(): Observable<Product[]> {
         return this.http.get(environment.apis.products).map((response) => {
             return response.json().products;
-        }).catch(this.handleError);
+        }).catch(this.handleError).delay(3000); // delay(3000) just for illustration
     }
 
-    handleError(error: any): Observable<Error> {               //On error, throw exception
+    handleError(error: any): Observable<Error> {               // On error, throw exception
         return Observable.throw(error);
     }
 

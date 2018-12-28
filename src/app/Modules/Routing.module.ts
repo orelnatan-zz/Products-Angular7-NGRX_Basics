@@ -15,4 +15,8 @@ const routes: Routes = [
 
 export class RoutingModule {
 
+    constructor() {
+
+    }
+
 }
