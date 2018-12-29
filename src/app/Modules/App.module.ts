@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoutingModule } from './Routing.module';
-import { MomentModule } from 'angular2-moment'; // npm i angular2-moment // https://www.npmjs.com/package/angular2-moment
+import { MomentModule } from 'angular2-moment';                 // npm i angular2-moment // https://www.npmjs.com/package/angular2-moment
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppStoreModule } from '../Store';
+import { AppStoreModule } from '../Store';                      // npm install @ngrx/store-devtools --save // https://alligator.io/angular/ngrx-store-redux-devtools/
 
 import { Products } from '../Services/Products.service';
 

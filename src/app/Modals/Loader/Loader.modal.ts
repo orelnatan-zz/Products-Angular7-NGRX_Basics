@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Modal } from '../../Core/Modal';
 
 @Component({
   selector: 'loader',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class Loader {
-  
+  @ViewChild('modalRef') modalRef: Modal;
+
+  public showLoader(): void {
+  	  this.modalRef.openModal();
+  }
+
+  public hideLoader(): void {
+      this.modalRef.closeModal();
+  }
 }

@@ -1,5 +1,5 @@
-<modal #modalRef (onClose)="onClose.emit()">
-    <div class="dialog-main">
+<modal #modalRef >
+    <div class="dialog-main" *ngIf="modalRef.renderModal">
             <div class="block-container">
                 <notification
                     [notification]="'Are you sure you want to perform this action?'"
@@ -9,7 +9,7 @@
             </div>
             <div class="dialog-controls flex-container row full">
                 <div class="dialog-button block-container half">
-                        <button class="global-button global-button-secondary" (click)="modalRef.closeModal()">Cancel</button> 
+                        <button class="global-button global-button-secondary" (click)="onCancel.emit()">Cancel</button> 
                 </div>
                 <div class="dialog-button  block-container half"> 
                     <button class="global-button global-button-primary" (click)="onApprove.emit()">Ok</button> 

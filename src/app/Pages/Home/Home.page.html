@@ -1,8 +1,21 @@
 
-<span class="home-add-product icon icon-plus" (click)="refresh()"></span>
+<loader #loaderRef > </loader>
+<success #successRef > </success>
+
+<dialog #dialogRef 
+	(onCancel)="dialogRef.hideDialog()"
+	(onApprove)="removeProduct(productId)" > 
+</dialog>
+
+
+<span class="home-add-product icon icon-plus" (click)="generateNewProduct()"></span>
 
 <div class="page">
     <div class="body" >
-            hommmeeee
+        <products-list
+            [products]="products$ | async"
+			(onDelete)="productId=$event; dialogRef.showDialog()"
+			(onEdit)="changeProduct($event)" >    
+        </products-list>
     </div>
 </div>

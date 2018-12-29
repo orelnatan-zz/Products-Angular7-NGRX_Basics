@@ -1,7 +1,8 @@
 @import './src/assets/Config/Utils';
 
 .dialog-main {
-    @extend %modal;
+	@extend %modal;
+	background: $color-white;
 
     .dialog-controls {
         background: $color-white;
