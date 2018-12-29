@@ -57,7 +57,6 @@ export class Home implements OnInit {
               productId: productId,
           })
 	  )
-	  
 	  this.successRef.showSuccess();
   }
 
