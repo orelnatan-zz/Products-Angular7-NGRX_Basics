@@ -1,6 +1,7 @@
 import { Actions, ActionTypes } from './Actions';
 import { Product } from '../../Models/Product.model';
 import { ProductsState } from './ProductsState.model';
+import * as productsActions from './Actions';
 
 const initialState: ProductsState = {
     products: [],

@@ -27,9 +27,8 @@ export class Home implements OnInit {
   productId: number;
 
   constructor(private store$: Store<AppState>){
-      // System global subscriptions ...
       this.products$ = this.store$.select(
-        ProductsSelectors.getAllProducts
+          ProductsSelectors.getAllProducts
       );
 
       this.isPending$ = this.store$.select(
