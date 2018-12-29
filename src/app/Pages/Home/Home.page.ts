@@ -44,7 +44,7 @@ export class Home implements OnInit {
       this.store$.dispatch(
           new ProductsActions.LoadProducts()
       );
-
+	  
       this.isPending$.subscribe((isPending: boolean) => {
           isPending ? this.loaderRef.showLoader() : this.loaderRef.hideLoader();
       });

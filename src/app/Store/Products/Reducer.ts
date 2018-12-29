@@ -1,13 +1,12 @@
 import { Actions, ActionTypes } from './Actions';
 import { Product } from '../../Models/Product.model';
 import { ProductsState } from './ProductsState.model';
-import * as productsActions from './Actions';
 
 const initialState: ProductsState = {
     products: [],
     isPending: false,
     status: {
-        isAjaxFailed: false,
+        error: false,
         notification: null
     },
 }
@@ -19,7 +18,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
                 ... state,
                 isPending: true,
                 status: {
-                    isAjaxFailed: false,
+                    error: false,
                     notification: 'Request sent...'
                 },
             }
@@ -29,7 +28,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
                 products: action.payload.products,
                 isPending: false,
                 status: {
-                    isAjaxFailed: false,
+                    error: false,
                     notification: action.payload.successAlert
                 },
             }
@@ -39,7 +38,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
                 products: [],
                 isPending: false,
                 status: {
-                    isAjaxFailed: true,
+                    error: true,
                     notification: action.payload.errorAlert,
                 },
             }

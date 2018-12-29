@@ -1,5 +1,5 @@
 
 export interface Status {
-    isAjaxFailed: boolean,
+    error: boolean,
     notification: string,
 }
