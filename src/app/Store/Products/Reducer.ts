@@ -4,7 +4,7 @@ import { ProductsState } from './ProductsState.model';
 
 const initialState: ProductsState = {
     products: [],
-    isPending: false,
+  //  isPending: false,
     status: {
         error: false,
         notification: null
@@ -16,7 +16,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
         case ActionTypes.LOAD_PRODUCTS: {
             return {
                 ... state,
-                isPending: true,
+           //     isPending: true,
                 status: {
                     error: false,
                     notification: 'Request sent...'
@@ -26,7 +26,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
         case ActionTypes.PRODUCTS_LOAD_SUCCESS: {
             return {
                 products: action.payload.products,
-                isPending: false,
+          //      isPending: false,
                 status: {
                     error: false,
                     notification: action.payload.successAlert
@@ -36,7 +36,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
         case ActionTypes.PRODUCTS_LOAD_FAILED: {
             return {
                 products: [],
-                isPending: false,
+          //      isPending: false,
                 status: {
                     error: true,
                     notification: action.payload.errorAlert,
@@ -60,7 +60,7 @@ export function ProductsReducer(state = initialState, action: Actions): Products
 		};
 		case ActionTypes.UPDATE_PRODUCT: {
 			const currentProduct: Product = state.products.find((product: Product) => product.id == action.payload.product.id);
-			
+
 			Object.keys(currentProduct).forEach((key) => {
 				currentProduct[key] = action.payload.product[key];
 			});

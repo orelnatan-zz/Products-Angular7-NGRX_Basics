@@ -3,6 +3,6 @@ import { Status } from '../../Models/Status.model';
 
 export interface ProductsState {
   products: Array<Product>;
-  isPending: boolean;
+ // isPending: boolean;
   status: Status;
 }

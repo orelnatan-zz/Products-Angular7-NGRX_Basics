@@ -12,12 +12,12 @@ export const getAllProducts = createSelector(
     }
 );
 
-export const getProductIsPending = createSelector(
-    getProductsState,
-    (state: ProductsState): boolean => {
-        return state.isPending;
-    }
-);
+// export const getProductIsPending = createSelector(
+//     getProductsState,
+//     (state: ProductsState): boolean => {
+//         return state.isPending;
+//     }
+// );
 
 export const getProductsRequestStatus = createSelector(
     getProductsState,

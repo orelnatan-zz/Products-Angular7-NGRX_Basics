@@ -11,7 +11,7 @@ import { ProductsEffects } from './Effects';
       StoreModule.forFeature('products', ProductsReducer),
       EffectsModule.forFeature([ProductsEffects]),
     ],
-    providers: [ProductsEffects]
+    providers: [ ProductsEffects ]
 })
 export class ProductsStoreModule {
 

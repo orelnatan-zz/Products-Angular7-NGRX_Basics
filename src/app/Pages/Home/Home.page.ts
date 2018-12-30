@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ProductsActions, ProductsSelectors } from '../../Store';
+import { ProductsActions, ProductsSelectors, SystemActions, SystemSelectors } from '../../Store';
 import { AppState } from '../../Store/AppState.model';
 import { Product } from '../../Models/Product.model';
 import { Status } from '../../Models/Status.model';
@@ -32,22 +32,35 @@ export class Home implements OnInit {
       );
 
       this.isPending$ = this.store$.select(
-          ProductsSelectors.getProductIsPending
+          SystemSelectors.getIsPending
       );
 
       this.status$ = this.store$.select(
           ProductsSelectors.getProductsRequestStatus
-      ) 
+      )
   }
 
   ngOnInit(){
       this.store$.dispatch(
           new ProductsActions.LoadProducts()
       );
-	  
+
+      this.store$.dispatch(
+        new SystemActions.ActivatePendingMode({ isPending: true })
+      )
+
       this.isPending$.subscribe((isPending: boolean) => {
           isPending ? this.loaderRef.showLoader() : this.loaderRef.hideLoader();
       });
+
+      setTimeout(() => {
+        this.store$.dispatch(
+          new SystemActions.ActivatePendingMode({ isPending: false })
+        )
+        console.log('ggggggggg');
+      }, 6000)
+
+
   }
 
    removeProduct(productId: number): void {
