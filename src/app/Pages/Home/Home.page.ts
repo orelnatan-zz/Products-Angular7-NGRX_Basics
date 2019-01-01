@@ -8,6 +8,8 @@ import { Status } from '../../Models/Status.model';
 import { Loader } from '../../Modals/Loader';
 import { Dialog } from '../../Modals/Dialog';
 import { Success } from '../../Modals/Success';
+import { Router } from '@angular/router';
+import { Route } from '../../Models/Route.model';
 
 @Component({
   selector: 'home',
@@ -23,10 +25,12 @@ export class Home implements OnInit {
   products$: Observable<Product[]>;
   isPending$: Observable<boolean>;
   status$: Observable<Status>;
+  onRedirect$: Observable<Route>;
 
   productId: number;
 
-  constructor(private store$: Store<AppState>){
+  constructor(private store$: Store<AppState>, 
+			  private router: Router){
       this.products$ = this.store$.select(
           ProductsSelectors.getAllProducts
       );
@@ -37,28 +41,31 @@ export class Home implements OnInit {
 
       this.status$ = this.store$.select(
           ProductsSelectors.getProductsRequestStatus
-      )
+	  )
+	  
+	//   this.onRedirect$ = this.store$.select(
+	// 	  SystemSelectors.getOnRedirect
+	//   )
   }
 
   ngOnInit(){
       this.store$.dispatch(
-          new ProductsActions.LoadProducts()
+          	new ProductsActions.LoadProducts()
       );
 
       this.store$.dispatch(
-        new SystemActions.ActivatePendingMode({ isPending: true })
+        	new SystemActions.Pending({ isPending: true })
       )
 
       this.isPending$.subscribe((isPending: boolean) => {
-          isPending ? this.loaderRef.showLoader() : this.loaderRef.hideLoader();
+          	isPending ? this.loaderRef.showLoader() : this.loaderRef.hideLoader();
       });
 
-      setTimeout(() => {
-        this.store$.dispatch(
-          new SystemActions.ActivatePendingMode({ isPending: false })
-        )
-        console.log('ggggggggg');
-      }, 6000)
+    //   this.onRedirect$.subscribe((route: Route) => {
+	// 		this.router.navigate([route.path], {
+	// 			queryParams: route.queryParams
+	// 		})
+	//   });
 
 
   }
@@ -88,6 +95,11 @@ export class Home implements OnInit {
 	  )
   }
 
+  navigateToAbout(){
+	this.router.navigate(['Home/About'], {
+		queryParams: { productId: 4},
+	})
+  }
 
 
   //////////////////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 
 export interface Route {
-    path: boolean,
+    path: string,
     queryParams: object,
 }

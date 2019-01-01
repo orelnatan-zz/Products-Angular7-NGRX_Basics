@@ -15,6 +15,8 @@ import { AppRoot } from '../Core/AppRoot';
 import { Modal } from '../Core/Modal';
 import { Notification } from '../Core/Notification';
 import { Home } from '../Pages/Home';
+import { Login } from '../Pages/Login';
+import { About } from '../Pages/About';
 import { Spinner } from '../Common/Spinner';
 import { ProductsList } from '../Common/ProductsList';
 import { ProductItem } from '../Common/ProductsList/SubComponents/ProductItem';
@@ -30,13 +32,14 @@ import { InputRadioButton } from '../Inputs/InputRadioButton';
 import { InputTextarea } from '../Inputs/InputTextarea';
 import { InputNumber } from '../Inputs/InputNumber';
 
-
 @NgModule({
   declarations: [
     AppRoot,
     Modal,
     Notification,
-    Home,
+	Home,
+	Login,
+	About,
     Spinner,
     ProductsList,
     ProductItem,

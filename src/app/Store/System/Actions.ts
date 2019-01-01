@@ -1,27 +1,35 @@
 import { Action } from '@ngrx/store';
+import { Route } from '../../Models/Route.model';
 
 export enum ActionTypes {
-	ACTIVATE_PENDING_MODE = '[SYSTEM] pending',
-	ACTIVATE_SUCCESS_MODE = '[SYSTEM] Success',
-	ACTIVATE_FAILURE_MODE = '[SYSTEM] failure',  
+	PENDING = '[SYSTEM] pending',
+	SUCCESS = '[SYSTEM] Success',
+	FAILURE = '[SYSTEM] Failure',
+	REDIRECT = '[SYSTEM] Redirect',  
 }
 
-export class ActivatePendingMode implements Action {
-    readonly type = ActionTypes.ACTIVATE_PENDING_MODE;
+export class Pending implements Action {
+    readonly type = ActionTypes.PENDING;
 
     constructor(public payload: { isPending: boolean }){}
 }
 
-export class ActivateSuccessMode implements Action {
-    readonly type = ActionTypes.ACTIVATE_SUCCESS_MODE;
+export class Success implements Action {
+    readonly type = ActionTypes.SUCCESS;
 
     constructor(){}
 }
 
-export class ActivateFailureMode implements Action {
-    readonly type = ActionTypes.ACTIVATE_FAILURE_MODE;
+export class Failure implements Action {
+    readonly type = ActionTypes.FAILURE;
 
     constructor(){}
 }
 
-export type Actions = ActivatePendingMode | ActivateSuccessMode | ActivateFailureMode;
+export class Redirect implements Action {
+    readonly type = ActionTypes.REDIRECT;
+	
+    constructor(public payload: { route: Route }){}
+}
+
+export type Actions = Pending | Success | Failure | Redirect;
