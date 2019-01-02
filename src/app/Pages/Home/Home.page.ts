@@ -29,7 +29,7 @@ export class Home implements OnInit {
 
   productId: number;
 
-  constructor(private store$: Store<AppState>, 
+  constructor(private store$: Store<AppState>,
 			  private router: Router){
       this.products$ = this.store$.select(
           ProductsSelectors.getAllProducts
@@ -42,10 +42,10 @@ export class Home implements OnInit {
       this.status$ = this.store$.select(
           ProductsSelectors.getProductsRequestStatus
 	  )
-	  
-	//   this.onRedirect$ = this.store$.select(
-	// 	  SystemSelectors.getOnRedirect
-	//   )
+
+	  this.onRedirect$ = this.store$.select(
+		  SystemSelectors.getOnRedirect
+	  )
   }
 
   ngOnInit(){
@@ -61,11 +61,11 @@ export class Home implements OnInit {
           	isPending ? this.loaderRef.showLoader() : this.loaderRef.hideLoader();
       });
 
-    //   this.onRedirect$.subscribe((route: Route) => {
-	// 		this.router.navigate([route.path], {
-	// 			queryParams: route.queryParams
-	// 		})
-	//   });
+      this.onRedirect$.subscribe((route: Route) => {
+			this.router.navigate([route.path], {
+				queryParams: route.queryParams
+			})
+	  });
 
 
   }
